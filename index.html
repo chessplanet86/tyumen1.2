@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>2 задание</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="app">
+        {{searchCoincidence}}
+        <div style="margin-bottom: 1%;">Выбранный столбец: {{chooseColumn}}</div>
+        <div style="margin-bottom: 1%;">Сортировка по возрастаннию: <button @click="sortAscOrder">Сортировать по
+                {{chooseColumn}}</button></div>
+        <div style="margin-bottom: 1%;">Сортировка по убыванию: <button @click="sortDescOrder">Сортировать по
+                {{chooseColumn}}</button></div>
+        <div style="margin-bottom: 1%;">Сбросить все настройки: <button @click="reset">RESET</button></div>
+        <div style="margin-bottom: 1%;">Поиск возможных совпадений по выбранному столбцу:
+            <input type="text" v-model='search' @keyup='test'>
+        </div>
+        <table class='table'>
+            <caption>Таблица с данными</caption>
+            <thead>
+                <thead>
+                    <tr>
+                        <th style="width: 5%;" @click="choose(0, $event)">id</th>
+                        <th style="width: 35%;" @click="choose(1,$event)">name</th>
+                        <th style="width: 15%;" @click="choose(2, $event)">date</th>
+                        <th style="width: 5%;" @click="choose(3, $event)">count</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr v-for="obj in array">
+                        <td>
+                            {{obj.id}}
+                        </td>
+                        <td>
+                            {{obj.name}}
+                        </td>
+                        <td>
+                            {{obj.date}}
+                        </td>
+                        <td>
+                            {{obj.count}}
+                        </td>
+                    </tr>
+                </tbody>
+            </thead>
+        </table>
+
+    </div>
+
+</body>
+
+<script src="./src/vue.js"></script>
+<script src="./src/index.js"></script>
+
+</html>

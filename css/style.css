@@ -1,0 +1,14 @@
+.table {
+    border: 1px solid black;
+    border-spacing: 0px;
+    margin: 2%;
+}
+
+.table th {
+    cursor: pointer;
+}
+
+.table th,
+.table td {
+    border: 1px solid black;
+}
