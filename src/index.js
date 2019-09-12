@@ -27,6 +27,12 @@ const app = new Vue({
     },
     computed: {
         searchCoincidence() {
+
+
+        },
+    },
+    watch: {
+        search() {
             let regExp = new RegExp(this.search);
 
             if (this.chooseColumn != null && this.search != null) {
@@ -37,16 +43,8 @@ const app = new Vue({
                         this.array.push(this.arrayInitial[i]);
                     }
                 }
-                this.dataColumns = document.querySelector('tbody').querySelectorAll('tr');
-                this.cellsTd = document.querySelectorAll('td');
-                this.cellsTh = document.querySelectorAll('th');
-
-                this.choose(this.numberColumn, this.evt);
             }
-        },
-    },
-    watch: {
-
+        }
     },
     mounted() {
         this.dataColumns = document.querySelector('tbody').querySelectorAll('tr');
